@@ -4,15 +4,16 @@ import 'package:loyalty/constant.dart';
 import 'package:loyalty/providers/order_provider.dart';
 import 'package:loyalty/screens/edit_profile/edit_profile_screen.dart';
 import 'package:loyalty/screens/full_scan_screen/full_scan_screen.dart';
-import 'package:loyalty/screens/home/home_screen.dart';
+import 'package:loyalty/screens/home/home.dart';
 import 'package:loyalty/screens/login/login_screen.dart';
 import 'package:loyalty/screens/menu/menu_screen.dart';
 import 'package:loyalty/screens/notification/notification_screen.dart';
 import 'package:loyalty/screens/profile/profile_screen.dart';
+import 'package:loyalty/screens/sign_up/sign_up_screen.dart';
 import 'package:loyalty/screens/welcome/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
 }
 
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
           routes: {
             WelcomeScreen.routeName: (ctx) => WelcomeScreen(),
             LoginScreen.routeName: (ctx) => LoginScreen(),
-            HomeScreen.routeName: (ctx) => HomeScreen(),
+            SignUpScreen.routeName: (ctx) => SignUpScreen(),
+            Home.routeName: (ctx) => Home(),
             FullScanScreen.routeName: (ctx) => FullScanScreen(),
             ProfileScreen.routeName: (ctx) => ProfileScreen(),
             EditProfileScreen.routeName: (ctx) => EditProfileScreen(),

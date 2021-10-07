@@ -3,9 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:loyalty/constant.dart';
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:loyalty/screens/full_scan_screen/full_scan_screen.dart';
-import 'package:loyalty/screens/menu/menu_screen.dart';
-import 'package:loyalty/screens/notification/notification_screen.dart';
-import 'package:loyalty/screens/profile/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/home_screen';
@@ -15,8 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,59 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: kButtonTextColor,
-        selectedItemColor: kButtonBgColor,
-        currentIndex: currentIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-          if (index == 1) {
-            Navigator.pushNamed(context, ProfileScreen.routeName);
-          } else if (index == 2) {
-            Navigator.pushNamed(context, NotificationScreen.routeName);
-          } else if (index == 3) {
-            Navigator.pushNamed(context, MenuScreen.routeName);
-          } else {
-            Navigator.pushNamed(context, HomeScreen.routeName);
-          }
-        },
-        elevation: 0,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/home.svg',
-              color: currentIndex == 0 ? kButtonBgColor : null,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/user.svg',
-              color: currentIndex == 1 ? kButtonBgColor : null,
-            ),
-            label: 'User',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/notification.svg',
-              color: currentIndex == 2 ? kButtonBgColor : null,
-            ),
-            label: 'Notification',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/menu.svg',
-              color: currentIndex == 3 ? kButtonBgColor : null,
-            ),
-            label: 'Menu',
-          ),
-        ],
       ),
       body: SafeArea(
         child: Column(
@@ -221,6 +163,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               'Put this QR code under the scanner',
               style: Theme.of(context).textTheme.bodyText1,
+            ),
+            SizedBox(
+              height: 30,
             ),
           ],
         ),

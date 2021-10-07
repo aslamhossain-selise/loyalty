@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty/components/button/custom_button.dart';
 import 'package:loyalty/screens/login/login_screen.dart';
+import 'package:loyalty/screens/sign_up/sign_up_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const routeName = '/welcome_screen';
@@ -34,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
             Spacer(),
             CustomButton(
               onPress: () =>
-                  Navigator.pushNamed(context, LoginScreen.routeName),
+                  Navigator.pushNamed(context, SignUpScreen.routeName),
               buttonText: 'Login/Registration',
               isDisabled: false,
             ),

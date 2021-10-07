@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:loyalty/components/button/custom_button.dart';
 import 'package:loyalty/constant.dart';
-import 'package:loyalty/screens/home/home_screen.dart';
-import 'package:loyalty/screens/scan/scan_screen.dart';
+import 'package:loyalty/screens/home/home.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login_screen';
@@ -21,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: kButtonTextColor,
         leading: IconButton(
           icon: SvgPicture.asset('assets/icons/arrow_back.svg'),
           onPressed: () => Navigator.pop(context),
@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
             onPress: isDisabled
                 ? null
                 : () {
-                    Navigator.pushNamed(context, HomeScreen.routeName);
+                    Navigator.pushNamed(context, Home.routeName);
                   },
             buttonText: 'Next',
             isDisabled: isDisabled,

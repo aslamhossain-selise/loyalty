@@ -15,14 +15,14 @@ const kInputDecoration = InputDecoration(
   ),
   border: UnderlineInputBorder(
     borderSide: BorderSide(
-      color: kCardColor,
-      width: 1,
+      color: Colors.white,
+      width: 1.0,
     ),
   ),
   enabledBorder: UnderlineInputBorder(
-    borderSide: BorderSide(color: kCardColor, width: 1.0),
+    borderSide: BorderSide(color: Colors.white, width: 1.0),
   ),
   focusedBorder: UnderlineInputBorder(
-    borderSide: BorderSide(color: kCardColor, width: 1.0),
+    borderSide: BorderSide(color: Colors.white, width: 1.0),
   ),
 );

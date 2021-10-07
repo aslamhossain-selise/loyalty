@@ -10,10 +10,12 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: kButtonTextColor,
         title: Text(
           'Notifications',
-          style: Theme.of(context).textTheme.bodyText2,
+          style: Theme.of(context).textTheme.bodyText1,
         ),
+        centerTitle: false,
         actions: [
           TextButton(
             onPressed: () {},
@@ -21,14 +23,13 @@ class NotificationScreen extends StatelessWidget {
               children: [
                 Text(
                   'Mark all as read',
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 SizedBox(
-                  width: 10,
+                  width: 5,
                 ),
                 SvgPicture.asset(
                   'assets/icons/check.svg',
-                  width: 20,
                 ),
               ],
             ),
@@ -37,7 +38,7 @@ class NotificationScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(15),
           child: Column(
             children: [
               Container(

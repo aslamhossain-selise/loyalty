@@ -48,6 +48,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: kButtonTextColor,
+        title: Text(
+          'Profile',
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        centerTitle: false,
         leading: IconButton(
           icon: SvgPicture.asset('assets/icons/arrow_back.svg'),
           onPressed: () => Navigator.pop(context),
@@ -70,6 +76,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         decoration: kInputDecoration.copyWith(
                           hintText: 'First name',
                         ),
+                        autocorrect: false,
                       ),
                     ),
                     SizedBox(
@@ -81,6 +88,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         decoration: kInputDecoration.copyWith(
                           hintText: 'Last name',
                         ),
+                        autocorrect: false,
                       ),
                     ),
                   ],
@@ -98,7 +106,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
-                  autocorrect: true,
+                  autocorrect: false,
                   autofillHints: [AutofillHints.email],
                 ),
                 TextFormField(
@@ -114,7 +122,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   keyboardType: TextInputType.phone,
-                  autocorrect: true,
+                  autocorrect: false,
                   autofillHints: [AutofillHints.telephoneNumber],
                 ),
                 TextFormField(
@@ -139,14 +147,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   ),
                   readOnly: true,
                   keyboardType: TextInputType.datetime,
-                  autocorrect: true,
+                  autocorrect: false,
                 ),
                 Container(
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(
                         color: Colors.white,
-                        width: 1,
+                        width: 1.0,
                       ),
                     ),
                   ),
@@ -232,13 +240,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   decoration: kInputDecoration.copyWith(
                     hintText: 'Instagram username e.g @vicafe',
                   ),
+                  autocorrect: false,
                 ),
                 SizedBox(
                   height: 30,
                 ),
                 Text(
                   'Change Password',
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 TextFormField(
                   style: TextStyle(color: Colors.white),
@@ -253,7 +262,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   keyboardType: TextInputType.phone,
-                  autocorrect: true,
+                  autocorrect: false,
                   autofillHints: [AutofillHints.telephoneNumber],
                 ),
                 TextFormField(
@@ -269,7 +278,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   keyboardType: TextInputType.phone,
-                  autocorrect: true,
+                  autocorrect: false,
                   autofillHints: [AutofillHints.telephoneNumber],
                 ),
                 TextFormField(
@@ -285,7 +294,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                   keyboardType: TextInputType.phone,
-                  autocorrect: true,
+                  autocorrect: false,
                   autofillHints: [AutofillHints.telephoneNumber],
                 ),
                 SizedBox(
